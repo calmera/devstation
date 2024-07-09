@@ -1,0 +1,101 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[custom.nats]
+command = "head -n 1 ~/.config/nats/context.txt"
+when = true
+shell = "/bin/sh"
+symbol = " "
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[kubernetes]
+disabled = true
+symbol = " "
+
+[gcloud]
+disabled = true
+
+[git_status]
+disabled = true
+
+[battery]
+disabled = true
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+home_symbol = ""
+truncation_length = 1
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+disabled = true
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+disabled = true
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
