@@ -1,14 +1,3 @@
-switch (uname)
-    case Linux
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        set -gx GOROOT /home/linuxbrew/.linuxbrew/opt/go/libexec
-        fish_add_path ~/.local/kitty.app/bin
-        fish_add_path ~/.local/bin
-    case Darwin
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-        set -gx GOROOT /opt/homebrew/opt/go/libexec
-end
-
 bind "[101;9u" edit_command_buffer
 
 op completion fish | source
@@ -17,23 +6,11 @@ set -gx GOPATH $HOME/go
 set -gx EDITOR nvim
 set -gx GIT_EDITOR nvim
 set -gx DOTFILES $HOME/dotfiles
-# set -gx KO_DOCKER_REPO ghcr.io/codegangsta
 set -gx fish_autosuggestion_enabled 1 
-
-set -gx SCP_US_WEST nats://127.0.0.1:14222,nats://127.0.0.1:14223,nats://127.0.0.1:14224,nats://127.0.0.1:14225,nats://127.0.0.1:14226
-set -gx SCP_US_CENTRAL nats://127.0.0.1:15222,nats://127.0.0.1:15223,nats://127.0.0.1:15224
-set -gx SCP_US_EAST nats://127.0.0.1:16222,nats://127.0.0.1:16223,nats://127.0.0.1:16224
-set -gx SCP_US_APAC nats://127.0.0.1:17222,nats://127.0.0.1:17223,nats://127.0.0.1:17224
-set -gx SCP_US_EU_CENTRAL nats://127.0.0.1:18222,nats://127.0.0.1:18223,nats://127.0.0.1:18224
 
 set -gx XDG_CONFIG_HOME $HOME/.config
 
-alias npm=pnpm
-
-#source $HOME/.dotfiles/config/fish/secrets.fish
-
 fish_add_path $HOME/.local/bin
-#fish_add_path $HOME/.cargo/bin
 fish_add_path $GOPATH/bin
 fish_add_path $GOROOT/bin
 fish_add_path /usr/local/bin
@@ -46,25 +23,4 @@ fish_add_path /usr/local/bin
 function fish_greeting
     # Do nothing
 end
-source /Users/calmera/.config/op/plugins.sh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/opt/miniconda3/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
-
-
-# Scaleway CLI autocomplete initialization.
-eval (scw autocomplete script shell=fish)
-
-# Setting PATH for Python 3.12
-# The original version is saved in /Users/calmera/.config/fish/config.fish.pysave
-set -x PATH "/Library/Frameworks/Python.framework/Versions/3.12/bin" "$PATH"
