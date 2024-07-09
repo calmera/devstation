@@ -27,13 +27,7 @@ git clone https://github.com/calmera/devstation.git
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
-sudo chsh -s /usr/local/bin/fish
-```
-
-Copy the dotfiles from this repo into your .config directory:
-
-```shell
-cp -r ~/workspace/devstation/dotfiles/* ~/.config/
+sudo chsh -s /usr/bin/fish
 ```
 
 ## Starship.rs
@@ -42,6 +36,12 @@ Install starship using the following command:
 
 ```shell
 curl -sS https://starship.rs/install.sh | sh
+```
+
+Copy the dotfiles from this repo into your .config directory:
+
+```shell
+cp -r ~/workspace/devstation/dotfiles/* ~/.config/
 ```
 
 ## Install NATS CLI
