@@ -1,7 +1,5 @@
 bind "[101;9u" edit_command_buffer
 
-op completion fish | source
-
 set -gx GOPATH $HOME/go
 set -gx EDITOR nvim
 set -gx GIT_EDITOR nvim
